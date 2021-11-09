@@ -1,0 +1,27 @@
+{
+  "name": "ts",
+  "version": "1.0.0",
+  "description": "Simple Typescript Setup",
+  "scripts": {
+    "browsersync": "npx browser-sync start --server 'public' --port 5000 --files 'public'",
+    "watch": "npx rollup --config rollup.config.js --config-dev --watch",
+    "dev": "run-p watch browsersync",
+    "compile": "npx rollup --config rollup.config.js",
+    "clean": "npx rimraf public/js/**/*",
+    "build": "run-s clean compile",
+    "test": "npx jest"
+  },
+  "author": "Lukasz Wisniewski",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^8.3.0",
+    "@types/jest": "^27.0.2",
+    "browser-sync": "^2.27.7",
+    "jest": "^27.3.1",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.59.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^4.4.4"
+  }
+}
