@@ -1,4 +1,5 @@
 import typescript from "@rollup/plugin-typescript"
+import { terser } from "rollup-plugin-terser"
 import * as fs from "fs"
 import path from "path"
 
@@ -25,7 +26,8 @@ export default files.map(el => {
         plugins: [
             typescript({
                 tsconfig: "./tsconfig.json"
-            })
+            }),
+            !isDev() ? terser() : null
         ]
     }
 })

@@ -1,8 +1,1 @@
-class Foo {
-    constructor() {
-        console.log("this is foo");
-    }
-}
-
-new Foo();
-console.log("ts");
+new class{constructor(){console.log("this is foo")}},console.log("ts");
